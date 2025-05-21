@@ -1,4 +1,4 @@
-module wiggle
+module github.com/efimovalex/wiggle
 
 go 1.23.2
 
