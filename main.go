@@ -47,8 +47,7 @@ func main() {
 			select {
 			case <-time.After(time.Millisecond * 100):
 				locX, locY := robotgo.Location()
-				// fmt.Println("X: ", locX, "Y: ", locY)
-				if locX >= sx-8 && locY < sy+8 {
+				if locX >= sx-20 && locY < sy+20 {
 					if !locked {
 						locked = true
 						toogleWiggler()
