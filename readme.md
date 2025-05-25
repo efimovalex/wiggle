@@ -35,6 +35,21 @@ Disable the wiggling by:
 Moving your mouse to the top-right corner of the screen
 Or pressing the Num Lock key.
 
+## Options
+```
+$ wiggle -h
+Usage: wiggler [options] 
+
+Options:
+ -v                 Enable verbose logging
+ -vvv               Enable debug logging
+ -hotcorner         Enable hot corner detection
+ -h                 Show this help message 
+ -idle              Disable idle detection. Enabled by default. Example: -idle=false
+ -idle-time         Set idle time in seconds. Default is 10 seconds. Example: -idle-time=5s
+ -wiggle-interval   Set wiggle interval in seconds. Default is 1 second. Example: -wiggle-interval=2s
+```
+
 ## 😂 Bonus
 
 ![wiggle](assets/wiggle-shimmy.gif)
