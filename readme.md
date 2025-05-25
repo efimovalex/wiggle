@@ -2,12 +2,22 @@
 
 Wiggle is a tiny utility that keeps your computer awake by gently wiggling the mouse cursor every second. Perfect for staying online during meetings, preventing screen lock, or just vibing with your idle time.
 
+## 📱 Platform
+- Only tested on MacOS
+- Should work on Linux, but not tested.
+
+Please open an issue if you have any problems.
+
 ## 🚀 Features
 
 - 🌀 Automatically wiggles your mouse cursor every second.
 - 🎯 Move your cursor to the **top-right corner** of the screen to toggle the wiggle mode on/off.
 - 🔢 Hit the **Num Lock** key to also toggle the wiggler.
+- 🖥️ Automatically detects the screen resolution and adjusts the wiggle accordingly.
+- 🖱️ Automatically detects when you move the mouse (Y axis), mouse wheel or press a key, and disables the wiggle until idle for 10 seconds
+- 🔄 Works in the background, starts automatically when idle for 10 seconds
 - 💡 Lightweight and simple — set it and forget it.
+- 🔔 Sends a notification when the wiggler is toggled on/off.
 
 ## 📦 Installation
 
