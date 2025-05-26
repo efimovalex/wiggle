@@ -1,53 +1,63 @@
 # 🖱️ Wiggle
 
-Wiggle is a tiny utility that keeps your computer awake by gently wiggling the mouse cursor every second. Perfect for staying online during meetings, preventing screen lock, or just vibing with your idle time.
+**Wiggle** is a tiny utility that keeps your computer awake by gently wiggling the mouse cursor every few seconds.  
+Perfect for staying online during meetings, avoiding idle status in work chats, preventing screen lock, dodging AFK kicks in GeForce Now, or just vibing during idle time.
 
-## 📱 Platform
-- Only tested on MacOS
-- Should work on Linux, but not tested.
+---
 
-Please open an issue if you have any problems.
+## 📱 Platform Support
+
+- ✅ **Tested** on macOS  
+- ⚠️ **Untested** on Linux (should work, but not guaranteed)  
+- 🛠 **Planned** for Windows — currently not working due to [compilation issues](https://github.com/robotn/gohook/blob/master/hook.go#L20C34-L20C41)
+
+Have a problem? [Open an issue](https://github.com/efimovalex/wiggle/issues)!
+
+---
 
 ## 🚀 Features
 
-- 🌀 Automatically wiggles your mouse cursor every second.
-- 🎯 Move your cursor to the **top-right corner** of the screen to toggle the wiggle mode on/off.
-- 🔢 Hit the **Num Lock** key to also toggle the wiggler.
-- 🖥️ Automatically detects the screen resolution and adjusts the wiggle accordingly.
-- 🖱️ Automatically detects when you move the mouse (Y axis), mouse wheel or press a key, and disables the wiggle until idle for 10 seconds
-- 🔄 Works in the background, starts automatically when idle for 10 seconds
-- 💡 Lightweight and simple — set it and forget it.
-- 🔔 Sends a notification when the wiggler is toggled on/off.
+- 🌀 Automatically wiggles the mouse cursor every few seconds
+- 🔄 Starts automatically after 30 seconds of user inactivity
+- 🖱️ Pauses when you move the mouse, scroll, or press a key
+- 💡 Lightweight and simple — set it and forget it
+- 🔔 Sends macOS notifications when the wiggler is toggled on/off
+
+---
 
 ## 📦 Installation
 
-### Go 
-```
+### Via Go
+
+```bash
 $ CGO_ENABLE=1 go install github.com/efimovalex/wiggle@latest
 
-$ wiggle& 
+$ wiggle &
+
 ```
 
 ## 🧠 Usage
-Start the script.
-Let the cursor do the hustle.
-Disable the wiggling by:
-Moving your mouse to the top-right corner of the screen
-Or pressing the Num Lock key.
+1. Start the script.
+2. Let the cursor do the hustle.
+3. Wiggling pauses on:
+    - Any mouse movement or action
+    - Any keyboard key press
+4. If idle for 30 seconds, it resumes automatically.
+5. To stop wiggling, simply close the script or use `Ctrl+C` in the terminal.
+6. To run it in the background, use `wiggle &`. Use `fg` to bring it back to the foreground or `kill` to stop it.
+
 
 ## Options
 ```
 $ wiggle -h
-Usage: wiggler [options] 
+Usage: wiggle [options]
 
 Options:
- -v                 Enable verbose logging
- -vvv               Enable debug logging
- -hotcorner         Enable hot corner detection
- -h                 Show this help message 
- -idle              Disable idle detection. Enabled by default. Example: -idle=false
- -idle-time         Set idle time in seconds. Default is 10 seconds. Example: -idle-time=5s
- -wiggle-interval   Set wiggle interval in seconds. Default is 1 second. Example: -wiggle-interval=2s
+  -v                 Enable verbose logging
+  -vvv               Enable debug logging
+  -h                 Show this help message
+  -idle-time         Set idle time before starting (e.g. -idle-time=5s, default: 30s)
+  -wiggle-interval   Set wiggle interval (e.g. -wiggle-interval=2s, default: 5s)
 ```
 
 ## 😂 Bonus
