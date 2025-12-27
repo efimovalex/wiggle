@@ -7,25 +7,25 @@ Perfect for staying online during meetings, avoiding idle status in work chats, 
 
 ## 📱 Platform Support
 
-- ✅ **Tested** on macOS  
-- ⚠️ **Untested** on Linux (should work, but not guaranteed)  
-- 🛠 **Planned** for Windows — currently not working due to [compilation issues](https://github.com/robotn/gohook/blob/master/hook.go#L20C34-L20C41)
+- **Tested** on macOS  
+- **Untested** on Linux (should work, but not guaranteed)  
+- **Planned** for Windows — currently not working due to [compilation issues](https://github.com/robotn/gohook/blob/master/hook.go#L20C34-L20C41)
 
 Have a problem? [Open an issue](https://github.com/efimovalex/wiggle/issues)!
 
 ---
 
-## 🚀 Features
+## Features
 
-- 🌀 Automatically wiggles the mouse cursor every few seconds
-- 🔄 Starts automatically after 30 seconds of user inactivity
-- 🖱️ Pauses when you move the mouse, scroll, or press a key
-- 💡 Lightweight and simple — set it and forget it
-- 🔔 Sends macOS notifications when the wiggler is toggled on/off
+- Automatically wiggles the mouse cursor every few seconds
+- Starts automatically after 30 seconds of user inactivity
+- Pauses when you move the mouse, scroll, or press a key
+- Lightweight and simple — set it and forget it
+- Sends macOS notifications when the wiggler is toggled on/off
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### Via Go
 
@@ -36,7 +36,7 @@ $ wiggle &
 
 ```
 
-## 🧠 Usage
+## Usage
 1. Start the script.
 2. Let the cursor do the hustle.
 3. Wiggling pauses on:
@@ -60,7 +60,7 @@ Options:
   -wiggle-interval   Set wiggle interval (e.g. -wiggle-interval=2s, default: 5s)
 ```
 
-## 😂 Bonus
+## Bonus
 
 ![wiggle](assets/wiggle-shimmy.gif)
 
@@ -73,9 +73,9 @@ Options:
 
 MIT License. Do whatever you want, just don’t forget to wiggle responsibly.
 
-Made with ❤️ and a whole lot of unnecessary movement.
+Made with love and a whole lot of unnecessary movement.
 
-## 🐛 Issues
+## Issues
 
 To enable alerts on macOS (they are there but just not allowed), open Script Editor and run the following command:
 ```
