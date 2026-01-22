@@ -10,6 +10,7 @@ import (
 
 	"log/slog"
 
+	"github.com/IamFaizanKhalid/lock"
 	"github.com/gen2brain/beeep"
 	"github.com/go-vgo/robotgo"
 	hook "github.com/robotn/gohook"
@@ -17,9 +18,8 @@ import (
 )
 
 var (
-	verboseFlag    *bool
-	degugFlag      *bool
-	idleDetection  *bool
+	verboseFlag    *bool = new(bool)
+	degugFlag      *bool = new(bool)
 	idleTime       *time.Duration
 	wiggleInterval *time.Duration
 
@@ -31,9 +31,10 @@ var (
 
 	lastTimeMoved = time.Now()
 
-	wigglerFlag = true
-	m           = sync.Mutex{}
-	wiggleLock  = sync.Mutex{}
+	wigglerFlag    = true
+	lockScreenFlag = false
+	m              = sync.Mutex{}
+	wiggleLock     = sync.Mutex{}
 
 	lastX *int16
 	lastY *int16
@@ -132,7 +133,7 @@ func main() {
 				return nil
 
 			case <-time.After(time.Second * 1):
-				if !wigglerFlag && time.Since(lastTimeMoved) > *idleTime {
+				if !lockScreenFlag && !wigglerFlag && time.Since(lastTimeMoved) > *idleTime {
 					logger.Info("Idle time exceeded, turning on wiggler")
 					toogleOn()
 				}
@@ -152,6 +153,19 @@ func main() {
 					wiggle()
 				}
 			}
+		}
+	})
+
+	lock.HandleEvents(func(e lock.Event) {
+		logger.Info("Lock event detected", "event", e)
+		if e.Locked {
+			logger.Info("System locked, turning off wiggler")
+			toogleOff()
+			lockScreenFlag = true
+		} else {
+			logger.Info("System unlocked, turning on wiggler")
+			toogleOn()
+			lockScreenFlag = false
 		}
 	})
 
